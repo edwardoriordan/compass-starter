@@ -1,0 +1,23 @@
+/** Link
+========================================================================== */
+%link-tag {
+  &:link, 
+  &:visited {
+    color: $link-color;
+    text-decoration: none;
+  }
+  &:hover {
+
+  } 
+  &:focus, 
+  &:active {
+    color: $link-active;
+  }
+}
+
+%prose {
+  @extend %prose-rhythm;
+  a {
+    @extend %link-tag;
+  }
+}

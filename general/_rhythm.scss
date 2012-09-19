@@ -1,0 +1,80 @@
+@include establish-baseline;
+
+/** Headings
+========================================================================== */
+%h1 {
+  @include adjust-font-size-to($h1);
+  @include trailer(1, $h1);
+}
+%h2 {
+  @include adjust-font-size-to($h2);
+  @include trailer(0.5, $h2);
+}
+%h3 {
+  @include adjust-font-size-to($h3);
+  @include trailer(0.5, $h3);
+}
+%h4 {
+  @include adjust-font-size-to($h4);
+}
+%h5 {
+  @include adjust-font-size-to($h5);
+}
+
+/** Titles
+========================================================================== */
+%page-title {
+  @extend %h1;
+}
+%block-title {
+  @include adjust-font-size-to($h4);
+  @include trailer(0.125, $h4);
+}
+%block-title-large {
+  @include adjust-font-size-to($h2);
+  @include trailer(0.125, $h2);
+}
+
+/** Content Elements
+========================================================================== */
+p {
+  margin: 0;
+}
+
+%prose-rhythm {
+  p + p,
+  p + ul,
+  p + ol {
+    @include leader(1);
+    @include trailer(1);
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+  .summary {
+    @include trailer(0.5);
+    p {
+      @extend .bigger;  
+    }
+  }
+  .field-type-text-with-summary h2,
+  .field-type-text-long h2 {
+    @extend %h2;
+  }
+  .field-type-text-with-summary h3,
+  .field-type-text-long h3 {
+    @extend %h3;
+  }
+  .field-type-text-with-summary h4,
+  .field-type-text-long h4 {
+    @extend %h4;
+  }
+  .field-type-text-with-summary h5,
+  .field-type-text-long h5 {
+    @extend %h5;
+  }
+  .field-type-text-with-summary h6,
+  .field-type-text-long h6 {
+    @extend %h6;
+  }  
+}

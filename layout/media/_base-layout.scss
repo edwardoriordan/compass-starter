@@ -1,0 +1,75 @@
+/** Sidebar regions
+========================================================================== */
+$sidebar-first-width: 3;
+$sidebar-second-width: 3;
+
+.two-sidebars {
+  .region-sidebar-first {
+    @include pull(9);
+    @include span-columns(3);
+  }
+  #main-content {
+    @include push(3);
+    @include span-columns($total-columns - 6);
+  }
+  .region-sidebar-second {
+    @include span-columns(3 omega);
+  }  
+}
+.one-sidebar.sidebar-first {
+  .region-sidebar-first {
+    @include span-columns(3);
+  }
+  #main-content {
+    @include span-columns($total-columns - 3 omega);
+  }
+}
+.one-sidebar.sidebar-second {
+  #main-content {
+    @include span-columns($total-columns - 3);
+  }
+  .region-sidebar-second {
+    @include span-columns(3 omega);
+  }
+}
+
+/** Has items grid
+========================================================================== */
+@mixin grid-has-x-items($number-items, $span, $total-content-columns: $total-columns) {
+  @include clearfix;
+  > .panel-pane,
+  > .block,
+  > .field-items > li,
+  .views-row {
+    @include span-columns($span, $total-content-columns);
+    @include nth-omega(#{$number-items}n);
+    min-height: 300px;
+  } 
+}
+%multiple-of-2-grid {
+  @include grid-has-x-items(2, 6);
+  // .one-sidebar & {
+  //   @include grid-has-x-items(2, 4.25, 9);
+  // }
+}
+%multiple-of-3-grid {
+  @include grid-has-x-items(3, 4);
+}
+%multiple-of-4-grid {
+  @include grid-has-x-items(4, 3);
+}
+
+.grid.max-2-items {
+  @extend %multiple-of-2-grid;  
+}
+.grid.max-3-items {
+  @extend %multiple-of-3-grid;  
+}
+.grid.max-4-items {
+  @extend %multiple-of-2-grid;
+}
+@media only screen and (min-width: 800px) {
+  .grid.max-4-items {
+    @include grid-has-x-items(4, 3);
+  }
+}

@@ -1,0 +1,8 @@
+ul.menu,
+ol.menu {
+  @extend .reset-menu;
+}
+
+.menu .menu {
+  padding-left: 1em;
+}

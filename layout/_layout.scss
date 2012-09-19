@@ -1,0 +1,35 @@
+/** Layout variables
+========================================================================== */
+$total-columns: 12;
+$column-width: 4em;
+$gutter-width: 1em;
+$grid-padding: $gutter-width;
+
+/** Media Querries
+========================================================================== */
+$do-layout: 640px;
+
+/** General
+========================================================================== */
+@include border-box-sizing;
+
+%container {
+  @include container;
+  @include susy-grid-background;
+}
+
+#header,
+#navigation,
+#page,
+#footer {
+  @extend %container;
+}
+.region {
+  @include clearfix;
+}
+
+/** Media Imports
+========================================================================== */
+@media only screen and (min-width: $do-layout) {
+  @import "base_layout";
+}

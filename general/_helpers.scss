@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+
+@mixin filter-color($rgba) {
+  @include filter-gradient($rgba,$rgba);
+}
+@mixin bg-with-dimensions($img) {
+  width: image-width($img);
+  height: image-height($img);
+  background: image-url($img) 0 0 no-repeat;
+}
+
+/* ==========================================================================
+   Extends
+   ========================================================================== */
+
+/** Helpers
+========================================================================== */
+.element-invisible {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  &.element-focusable:active,
+  &.element-focusable:focus {
+    position: static !important;
+    clip: auto;  
+  }
+}
+
+/** Type
+========================================================================== */
+.no-link-style {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/** Menus
+========================================================================== */
+%reset-menu {
+  padding: 0;
+  margin: 0;
+  li {
+    list-style: none;
+    a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+  }  
+}
