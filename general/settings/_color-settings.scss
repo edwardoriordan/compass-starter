@@ -8,8 +8,8 @@ $primary: #792e7b;
 $text-main-color: #232323;
 
 $link-color      : #00baff !default;
-$link-hover      : darken($linkColor, 10%) !default;
-$link-active     : lighten(adjust-hue($linkColor, 75deg), 10%) !default;
+$link-hover      : darken($link-color, 10%) !default;
+$link-active     : lighten(adjust-hue($link-color, 75deg), 10%) !default;
 
 $link-low: adjust-color($link-color, $hue: 0, $saturation: -25, $lightness: 10);
 
