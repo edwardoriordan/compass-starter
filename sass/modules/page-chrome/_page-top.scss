@@ -1,7 +1,7 @@
 .site-name {
-  @include replace-text('logo.gif');
-  height: image-height('logo.gif');
-  width: image-width('logo.gif');
+  //@include replace-text('logo.png');
+  //height: image-height('logo.png');
+  //width: image-width('logo.png');
   margin-bottom: 0;
 
   @media only screen and (min-width: $do-layout) {

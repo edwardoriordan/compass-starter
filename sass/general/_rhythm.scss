@@ -1,5 +1,11 @@
 @include establish-baseline;
 
+/** Text
+========================================================================== */
+%larger {
+  @include adjust-font-size-to($larger);  
+}
+
 /** Headings
 ========================================================================== */
 %h1 {
@@ -18,6 +24,9 @@
   @include adjust-font-size-to($h4);
 }
 %h5 {
+  @include adjust-font-size-to($h5);
+}
+%h6 {
   @include adjust-font-size-to($h5);
 }
 
@@ -54,7 +63,7 @@ p {
   .summary {
     @include trailer(0.5);
     p {
-      @extend .bigger;  
+      @extend %larger;  
     }
   }
   .field-type-text-with-summary h2,

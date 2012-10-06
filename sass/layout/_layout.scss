@@ -31,5 +31,5 @@ $do-layout: 640px;
 /** Media Imports
 ========================================================================== */
 @media only screen and (min-width: $do-layout) {
-  @import "base_layout";
+  @import "media/base-layout";
 }
